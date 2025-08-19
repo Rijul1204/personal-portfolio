@@ -31,6 +31,7 @@ export async function generateMetadata() {
       locale: 'en_US',
       type: 'website',
     },
+
     twitter: {
       card: 'summary_large_image',
       title: home.title,
@@ -59,6 +60,10 @@ export default async function RootLayout({
       )}
     >
       <head>
+        <meta name="title" property="og:title" content={home.title} />
+        <meta name="description" property="og:description" content={home.description} />
+        <meta name="image" property="og:image" content={`${baseURL}${home.image}`} />
+        <meta name="author" content="Rashedul Hasan Rijul" />
         <script
           id="theme-init"
           dangerouslySetInnerHTML={{
