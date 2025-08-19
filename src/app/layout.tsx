@@ -9,17 +9,20 @@ import { Footer, Header, RouteGuard, Providers } from '@/components';
 import { baseURL, effects, fonts, style, dataStyle, home } from '@/resources';
 
 export async function generateMetadata() {
+  const ogImageUrl = `${baseURL}${home.image}`;
+  
   return {
+    metadataBase: new URL(baseURL),
     title: home.title,
     description: home.description,
     openGraph: {
       title: home.title,
       description: home.description,
-      url: `${baseURL}${home.path}`,
+      url: baseURL,
       siteName: home.title,
       images: [
         {
-          url: `${baseURL}${home.image}`,
+          url: ogImageUrl,
           width: 1200,
           height: 630,
           alt: home.title,
@@ -28,26 +31,11 @@ export async function generateMetadata() {
       locale: 'en_US',
       type: 'website',
     },
-    metadataBase: new URL(baseURL),
-    other: {
-      'og:image': `${baseURL}${home.image}`,
-    },
     twitter: {
       card: 'summary_large_image',
       title: home.title,
       description: home.description,
-      images: `${baseURL}${home.image}`,
-    },
-    robots: {
-      index: true,
-      follow: true,
-      googleBot: {
-        index: true,
-        follow: true,
-        'max-video-preview': -1,
-        'max-image-preview': 'large',
-        'max-snippet': -1,
-      },
+      images: [ogImageUrl],
     },
   };
 }
