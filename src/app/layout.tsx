@@ -28,11 +28,15 @@ export async function generateMetadata() {
       locale: 'en_US',
       type: 'website',
     },
+    metadataBase: new URL(baseURL),
+    other: {
+      'og:image': `${baseURL}${home.image}`,
+    },
     twitter: {
       card: 'summary_large_image',
       title: home.title,
       description: home.description,
-      images: [`${baseURL}${home.image}`],
+      images: `${baseURL}${home.image}`,
     },
     robots: {
       index: true,
