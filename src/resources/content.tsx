@@ -72,7 +72,7 @@ const about: About = {
       {
         company: "GlaceIt",
         timeframe: "Jun 2025 - Present",
-        role: "Co-founder / Engineering Lead",
+        role: "Co-founder",
         achievements: [
           <>DonorLog Platform: Designed and launched DonorLog, a CRA-compliant donation management SaaS adopted by multiple charities, including two paying customers. Automated tax receipt generation, e-transfer reconciliation, and bank/third-party payment integrations using Next.js, Neon Postgres, Drizzle ORM, and Plaid API, reducing administrative work by 40%.</>,
           <>Team Leadership and Operations: Led a growing team of 3 engineers through sprint-based development, delivering production-ready features on schedule. Oversaw architecture design, DevOps automation, and deployment pipelines, while also managing client onboarding, marketing strategy, and operational decisions enabling the platform to reach paying customer adoption within months of launch.</>,
