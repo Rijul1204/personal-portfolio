@@ -45,6 +45,16 @@ export default function About() {
       items: about.studies.institutions.map((institution) => institution.name),
     },
     {
+      title: about.achievements.title,
+      display: about.achievements.display,
+      items: about.achievements.items.map((achievement) => achievement.title),
+    },
+    {
+      title: about.projects.title,
+      display: about.projects.display,
+      items: about.projects.items.map((project) => project.title),
+    },
+    {
       title: about.technical.title,
       display: about.technical.display,
       items: about.technical.skills.map((skill) => skill.title),
@@ -260,6 +270,46 @@ export default function About() {
                     </Text>
                     <Text variant="heading-default-xs" onBackground="neutral-weak">
                       {institution.description}
+                    </Text>
+                  </Column>
+                ))}
+              </Column>
+            </>
+          )}
+
+          {about.achievements.display && (
+            <>
+              <Heading as="h2" id={about.achievements.title} variant="display-strong-s" marginBottom="m">
+                {about.achievements.title}
+              </Heading>
+              <Column fillWidth gap="l" marginBottom="40">
+                {about.achievements.items.map((achievement, index) => (
+                  <Column key={`${achievement.title}-${index}`} fillWidth gap="4">
+                    <Text id={achievement.title} variant="heading-strong-l">
+                      {achievement.title}
+                    </Text>
+                    <Text variant="body-default-m" onBackground="neutral-weak">
+                      {achievement.description}
+                    </Text>
+                  </Column>
+                ))}
+              </Column>
+            </>
+          )}
+
+          {about.projects.display && (
+            <>
+              <Heading as="h2" id={about.projects.title} variant="display-strong-s" marginBottom="m">
+                {about.projects.title}
+              </Heading>
+              <Column fillWidth gap="l" marginBottom="40">
+                {about.projects.items.map((project, index) => (
+                  <Column key={`${project.title}-${index}`} fillWidth gap="4">
+                    <Text id={project.title} variant="heading-strong-l">
+                      {project.title}
+                    </Text>
+                    <Text variant="body-default-m" onBackground="neutral-weak">
+                      {project.description}
                     </Text>
                   </Column>
                 ))}

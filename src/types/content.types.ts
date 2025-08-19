@@ -177,6 +177,34 @@ export interface About extends BasePageConfig {
       description: React.ReactNode;
     }>;
   };
+  /** Achievements section */
+  achievements: {
+    /** Whether to display achievements section */
+    display: boolean;
+    /** Title for the achievements section */
+    title: string;
+    /** List of achievements */
+    items: Array<{
+      /** Achievement title */
+      title: string;
+      /** Achievement description */
+      description: React.ReactNode;
+    }>;
+  };
+  /** Personal projects section */
+  projects: {
+    /** Whether to display projects section */
+    display: boolean;
+    /** Title for the projects section */
+    title: string;
+    /** List of personal projects */
+    items: Array<{
+      /** Project title */
+      title: string;
+      /** Project description */
+      description: React.ReactNode;
+    }>;
+  };
   /** Technical skills section */
   technical: {
     /** Whether to display technical skills section */
